@@ -1,0 +1,16 @@
+diff -Nur avr_simulator.ori/Makefile avr_simulator.mod/Makefile
+--- avr_simulator.ori/Makefile	2008-08-06 11:17:12.129415776 +0200
++++ avr_simulator.mod/Makefile	2008-08-06 11:18:17.152892759 +0200
+@@ -52,8 +52,9 @@
+ 	xgettext -j -o $(project).po -k_ *.c
+ 
+ install: uninstall
+-	install $(project) $(prefix)/bin
+-	mkdir $(prefix)/share/$(project)
+-	install -m 644 *.xpm $(prefix)/share/$(project)
++	install $(project) $(DESTDIR)$(prefix)/bin
++	mkdir $(DESTDIR)$(prefix)/share/$(project)
++	install -m 644 *.xpm $(DESTDIR)$(prefix)/share/$(project)
++
+ uninstall:
+ 	rm -rf $(prefix)/bin/$(project) $(prefix)/share/$(project)

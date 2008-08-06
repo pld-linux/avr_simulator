@@ -1,0 +1,12 @@
+diff -Nur avr_simulator.ori/Makefile avr_simulator.mod/Makefile
+--- avr_simulator.ori/Makefile	2008-08-06 11:22:33.606294619 +0200
++++ avr_simulator.mod/Makefile	2008-08-06 11:21:28.490842208 +0200
+@@ -54,7 +54,7 @@
+ install: uninstall
+ 	install $(project) $(DESTDIR)$(prefix)/bin
+ 	mkdir $(DESTDIR)$(prefix)/share/$(project)
+-	install -m 644 *.xpm $(DESTDIR)$(prefix)/share/$(project)
++	install -m 644 xpm/*.xpm $(DESTDIR)$(prefix)/share/$(project)
+ 
+ uninstall:
+ 	rm -rf $(prefix)/bin/$(project) $(prefix)/share/$(project)

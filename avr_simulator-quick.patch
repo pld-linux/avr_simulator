@@ -1,0 +1,84 @@
+diff -Nur avr_simulator/help.c avr_simulator.mod/help.c
+--- avr_simulator/help.c	2002-08-30 16:53:43.000000000 +0200
++++ avr_simulator.mod/help.c	2008-08-06 00:22:14.000000000 +0200
+@@ -120,32 +120,32 @@
+ 
+   strings[0]=XmStringGenerate( "                  AVR Simulator V1.3.1\n\n",NULL,
+ 			       XmCHARSET_TEXT,"Big_rendition");
+-  strings[1]=XmStringGenerate(" 
+- AVR Simulator - A GNU/Linux simulator for the Atmel AVR series  
+- of microcontrollers. 
+-
+- This program was developed as the graduated work. 
+- Copyright (C) 2001 Sergiy Uvarov          
+-
+- This program is free software; you can redistribute it and/or  
+- modify it under the terms of the GNU General Public License    
+- as published by the Free Software Foundation; either version 2 
+- of the License, or (at your option) any later version.         
+- 
+- This program is distributed in the hope that it will be useful,
+- but WITHOUT ANY WARRANTY; without even the implied warranty of 
+- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  
+- GNU General Public License for more details.
+- 
+- You should have received a copy of the GNU General Public
+- License  along with this program; if not, write to the Free
+- Software Foundation, Inc., 59 Temple Place - Suite 330, Boston,
+- MA 02111-1307, USA.
+- 
+- Sergiy Uvarov
+-
+- Web site: 
+- E-mail  : colonel@ff.dsu.dp.ua\n",
++  strings[1]=XmStringGenerate(
++" AVR Simulator - A GNU/Linux simulator for the Atmel AVR series  \n"
++" of microcontrollers. \n"
++"\n"
++" This program was developed as the graduated work. \n"
++" Copyright (C) 2001 Sergiy Uvarov          \n"
++"\n"
++" This program is free software; you can redistribute it and/or  \n"
++" modify it under the terms of the GNU General Public License    \n"
++" as published by the Free Software Foundation; either version 2 \n"
++" of the License, or (at your option) any later version.         \n"
++" \n"
++" This program is distributed in the hope that it will be useful,\n"
++" but WITHOUT ANY WARRANTY; without even the implied warranty of \n"
++" MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  \n"
++" GNU General Public License for more details.\n"
++" \n"
++" You should have received a copy of the GNU General Public\n"
++" License  along with this program; if not, write to the Free\n"
++" Software Foundation, Inc., 59 Temple Place - Suite 330, Boston,\n"
++" MA 02111-1307, USA.\n"
++" \n"
++" Sergiy Uvarov\n"
++"\n"
++" Web site: \n"
++" E-mail  : colonel@ff.dsu.dp.ua\n",
+ 			     XmFONTLIST_DEFAULT_TAG,
+ 			     XmCHARSET_TEXT,_MOTIF_DEFAULT_LOCALE);
+   XmStringConcatAndFree(strings[0],strings[1]);
+diff -Nur avr_simulator/Makefile avr_simulator.mod/Makefile
+--- avr_simulator/Makefile	2002-09-09 08:51:56.000000000 +0200
++++ avr_simulator.mod/Makefile	2008-08-06 00:20:42.000000000 +0200
+@@ -1,13 +1,13 @@
+ project         = avr_simulator
+-prefix          = /usr/local
++prefix          = /usr
+ objs            = avr_simulator.o func_command.o hardware.o xs_wtip.o\
+ 		buttons_menu.o menu_options.o menu_memory.o help.o 
+-x_includes      = -I/opt/X11R6/include
+-motif_includes  = -I/usr/local/include
++x_includes      = -I/usr/X11R6/include
++motif_includes  = -I/usr/include
+ 
+ # X and Motif libraries and locations.
+-xlib            = -L/opt/X11R6/lib -lXpm -lXmu -lXp -lXext -lXt  -lX11 
+-motif           = -L/usr/local/lib -lXm 
++xlib            = -L/usr/X11R6/lib -lXpm -lXmu -lXp -lXext -lXt  -lX11 
++motif           = -L/usr/lib -lXm 
+ thread		= -lpthread
+ 
+ # Using gcc compiler....
