@@ -6,7 +6,7 @@
 Summary:	avr simulator
 Name:		avr_simulator
 Version:	1.3.0
-Release:	0.1
+Release:	0.3
 License:	GPL v2+
 Group:		Applications
 Source0:	http://dl.sourceforge.net/avr/%{name}-%{version}.tar.gz
@@ -14,6 +14,7 @@ Source0:	http://dl.sourceforge.net/avr/%{name}-%{version}.tar.gz
 Patch0:		%{name}-quick.patch
 Patch1:		%{name}-DESTDIR.patch
 Patch2:		%{name}-install.patch
+Patch3:		%{name}-xpm.patch
 URL:		http://sourceforge.net/projects/avr/
 BuildRequires:	motif-devel
 #BuildRequires:	autoconf
@@ -40,6 +41,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 # undos the source
 #find '(' -name '*.php' -o -name '*.inc' ')' -print0 | xargs -0 %{__sed} -i -e 's,\r$,,'
