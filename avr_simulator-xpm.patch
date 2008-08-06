@@ -1,0 +1,51 @@
+diff -Nur avr_simulator.ori/avr_simulator.c avr_simulator.mod/avr_simulator.c
+--- avr_simulator.ori/avr_simulator.c	2002-09-05 16:15:51.000000000 +0200
++++ avr_simulator.mod/avr_simulator.c	2008-08-06 11:42:25.258776632 +0200
+@@ -474,11 +474,11 @@
+ /*  				    &current_pixmap,NULL,NULL))) */
+ /*      fprintf(stderr,"%s\n",XpmGetErrorString(errno)); */
+ 
+-  if((stop_pixmap=XmGetPixmap(XtScreen(toplevel),"xpm/breakpoint.xpm",
++  if((stop_pixmap=XmGetPixmap(XtScreen(toplevel),"/usr/share/avr_simulator/breakpoint.xpm",
+ 			      drawarea.foreground,drawarea.background
+ 			      ))==XmUNSPECIFIED_PIXMAP) 
+     fprintf(stderr," Pixmap problem with file breakpoint.xpm\n");
+-  if((current_pixmap=XmGetPixmap(XtScreen(toplevel),"xpm/current.xpm",
++  if((current_pixmap=XmGetPixmap(XtScreen(toplevel),"/usr/share/avr_simulator/current.xpm",
+ 				 drawarea.foreground,drawarea.background
+ 				 ))==XmUNSPECIFIED_PIXMAP) 
+     fprintf(stderr," Pixmap problem with file current.xpm\n");
+diff -Nur avr_simulator.ori/buttons_menu.c avr_simulator.mod/buttons_menu.c
+--- avr_simulator.ori/buttons_menu.c	2002-09-05 16:13:47.000000000 +0200
++++ avr_simulator.mod/buttons_menu.c	2008-08-06 11:43:45.471163795 +0200
+@@ -65,20 +65,20 @@
+ int thread_stop;
+ 
+ Buttons buttons[]={
+-  {_("Open"),load_flash_callback,&file_selection,"xpm/load.xpm",_("Load Flash")},
+-  {_("Reload"),reload_flash_callback,NULL,"xpm/reload.xpm",_("Reload Flash")},
++  {_("Open"),load_flash_callback,&file_selection,"/usr/share/avr_simulator/load.xpm",_("Load Flash")},
++  {_("Reload"),reload_flash_callback,NULL,"/usr/share/avr_simulator/reload.xpm",_("Reload Flash")},
+   {"separator",NULL,NULL,NULL,NULL},
+-  {_("Trace"),trace_into_callback,NULL,"xpm/trace_into.xpm",
++  {_("Trace"),trace_into_callback,NULL,"/usr/share/avr_simulator/trace_into.xpm",
+    _("Trace into")},
+-  {_("Step Over"),step_over_callback,NULL,"xpm/step_over.xpm",_("Step Over")},
+-  {_("Step Out"),step_out_callback,NULL,"xpm/step_out.xpm",_("Step Out")},
+-  {_("Multi Step"),multi_step_callback,NULL,"xpm/multi_step.xpm",_("Multi Step")},
+-  {_("Auto Step"),auto_step_callback,NULL,"xpm/auto_step.xpm",_("Auto Step")},
++  {_("Step Over"),step_over_callback,NULL,"/usr/share/avr_simulator/step_over.xpm",_("Step Over")},
++  {_("Step Out"),step_out_callback,NULL,"/usr/share/avr_simulator/step_out.xpm",_("Step Out")},
++  {_("Multi Step"),multi_step_callback,NULL,"/usr/share/avr_simulator/multi_step.xpm",_("Multi Step")},
++  {_("Auto Step"),auto_step_callback,NULL,"/usr/share/avr_simulator/auto_step.xpm",_("Auto Step")},
+   {"separator",NULL,NULL,NULL,NULL},
+-  {_("Run"),run_callback,NULL,"xpm/run.xpm",_("Run")},
+-  {_("Stop"),stop_callback,NULL,"xpm/stop.xpm",_("Stop")},
++  {_("Run"),run_callback,NULL,"/usr/share/avr_simulator/run.xpm",_("Run")},
++  {_("Stop"),stop_callback,NULL,"/usr/share/avr_simulator/stop.xpm",_("Stop")},
+   {"separator",NULL,NULL,NULL,NULL},
+-  {_("Reset"),reset_callback,NULL,"xpm/reset.xpm",_("Reset")},
++  {_("Reset"),reset_callback,NULL,"/usr/share/avr_simulator/reset.xpm",_("Reset")},
+   
+ };
+ 
